@@ -1,0 +1,22 @@
+.menu{
+    border:1px solid;
+    background-color: #333;
+    display: flex;
+    list-style: none;
+}
+.item-menu{
+    background-color: #333;
+    transition: background-color 0.3s;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.item-menu:hover{
+    /*opacity: 0.7;*/
+    background-color: #cccccc;
+}
+.link-item-menu{
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0px 40px;
+}
