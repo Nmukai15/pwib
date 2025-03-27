@@ -17,11 +17,11 @@ body, html{
                          "rodape rodape";
 }
 header{
-    background-color: #48cfe0;
+    background-color: #cccccc;
     grid-area:cabecalho;
 }
 main{
-    background-color: #e05da1;
+    background-color: #cccccc;
     grid-area:secao;
     display:flex;
     flex-wrap:wrap ;
