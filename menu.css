@@ -20,3 +20,35 @@
     text-decoration: none;
     padding: 0px 40px;
 }
+body{
+    background-color: #797979;
+    color: #000000
+}
+img{
+    border: 0.5px solid;
+}
+.conntainer{
+    width: 50%;
+    height:100%;
+    background-color: #535353;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 200px auto;
+    grid-template-areas:"cabecalho cadecalho"
+                        "secao secao"
+}
+header{
+    background-color:#333;
+    grid-area: cabecalho;
+}
+main{
+    background-color:#535353;
+    grid-area: secao;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+.explicacao{
+    background-color: #ff7b00;
+    color: #000000
+}
