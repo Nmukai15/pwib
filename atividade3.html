@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function() {
+        const countdownEl = document.getElementById('countdown');
+          let daysLeft = 50;
+        
+          function updateCountdown() {
+             if(daysLeft > 0) {
+               countdownEl.textContent = daysLeft + (daysLeft === 1 ? ' dia' : ' dias');
+              daysLeft--;
+              } else {
+                countdownEl.textContent = 'O grande dia chegou! Boa sorte!';
+               clearInterval(intervalId);
+             }
+           }
+            updateCountdown();
+            const intervalId = setInterval(updateCountdown, 1000);
+          })();
+        </script>
+</body>
+</html>

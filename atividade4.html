@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var peso = Number (prompt("digite seu peso"))
+    var altura = Number (prompt("digite sua altura"))
+    var imc = (altura * altura)/peso
+    if (imc < 18.5)
+    {
+        alert("você está abaixo do peso")
+    }
+    else if (imc>=18.5 && imc<24.9)
+    {
+        alert("você está com o peso ideal")
+    }
+    else if (imc>=25.0 && imc<29.9)
+    {
+        alert("você está com sobrepeso")
+    }
+    else if (imc>30){
+       
+ 
+        alert("você está com obesidade")
+    }
+    else{
+        alert("")
+    }
+    </script>
+</body>
+</html>
