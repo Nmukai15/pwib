@@ -60,5 +60,37 @@
             {
             document.write("<H1>"+i+" x "+tabuada+" = "+(tabuada*i)+"<H1>")
             }*/
-    
+    function meualerta(texto,numero)
+    {
+        alert(texto)
+    }
+    function somar(numero1,numero2)
+    {
+        var soma = Number(numero1)+Number(numero2)
+       return(soma)
+    }
+   function CalculeASoma()
+   {
+    meualerta(somar(prompt("digite um numero"),prompt("digite outro numero")))
+   }
+    /*var resultado = somar(50,50)
+    meualerta(resultado)
+    meualerta(somar("10","11"))
+    alert(somar(20,30))
+    /*var num1 = Number(prompt("digite um numero"))
+    var num2 = Number(prompt("digite outro numero"))
+    meualerta(num1+num2)
+   /*faça uma função que
+   peça o mone do usuario
+   e imprima seu nome 
+   */
+  function nome()
+  {
+    var nome = prompt("digite seu nome: ")
+    alert("seu nome é "+nome)
+  }
+  //nome()
     </script>
+    <button onclick="CalculeASoma()">
+    clique aqui
+    </button>
