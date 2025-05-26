@@ -6,7 +6,12 @@
     <title>Criar Elemento</title>
 </head>
 <body>
+    <p>Escolha a cor de fundo</p>
     <input type="color" id="cor" value="">
+    <p>Escolha a cor do texto</p>
+    <input type="color" id="cortxt" value="">
+    <p>Digite a tag HTML desejada</p>
+    <input type="text" id="tag" value=""><br><br>
     <button onclick="CriarElemento()" id="botao">
         Criar elemento
     </button>
@@ -14,12 +19,13 @@
     <script>
         function CriarElemento()
         {
-            var cor = document.getElementById("cor")
-            //var corfundo = prompt("Digite uma cor de fundo em hexadecimal para o elemento ")
-            var elemento = document.createElement("h1")
+            var cor = document.getElementById("cor") //var corfundo = prompt("Digite uma cor de fundo em hexadecimal para o elemento ")
+            var cortxt = document.getElementById("cortxt")
+            var tag = document.getElementById("tag").value
+            var elemento = document.createElement(tag)
             elemento.style.backgroundColor = cor.value //corfundo
-            elemento.style.color = "#ffffff"
-            elemento.style.fontSize = '50px'
+            elemento.style.color = cortxt.value //cor do texto
+            elemento.style.fontSize = ''
             elemento.innerText = "Oi mundo"
             elemento.classList.add("ClasseCampo")
 
