@@ -4,41 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
-    <style>
-        /* Estilos gerais do corpo */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Estilos do container principal */
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Estilos para a seção de informações do Pokémon */
-        #pokemonInfo {
-            margin-top: 20px;
-        }
-
-        /* Estilos para os tipos do Pokémon */
-        .type {
-            display: inline-block;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 5px;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="pokedex.css"/>
 </head>
 <body>
     <div class="container">
@@ -47,6 +13,10 @@
         <input type="text" id="search" placeholder="Digite o nome ou ID do Pokémon">
         <!-- Botão para buscar o Pokémon -->
         <button id="searchBtn">Buscar</button>
+        <div class="buttons">
+            <button class="ant">&larr; Anterior </button>
+            <button class="dps">Próximo &rarr;</button>
+        </div>
         <!-- Div onde as informações do Pokémon serão exibidas -->
         <div id="pokemonInfo"></div>
     </div>
