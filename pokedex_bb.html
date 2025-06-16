@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex</title>
+    <link rel="icon" href="./imagens/icone.png">
     <link rel="stylesheet" href="pokedex.css"/>
+    <title>Pokédex</title>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <h1>Pokédex</h1>
         <!-- Campo de entrada para buscar Pokémon -->
         <input type="text" id="search" placeholder="Digite o nome ou ID do Pokémon">
         <!-- Botão para buscar o Pokémon -->
         <button id="searchBtn">Buscar</button>
+        <!-- Div onde as informações do Pokémon serão exibidas -->
+        <div id="pokemonInfo"></div>
         <div class="buttons">
             <button class="ant">&larr; Anterior </button>
             <button class="dps">Próximo &rarr;</button>
         </div>
-        <!-- Div onde as informações do Pokémon serão exibidas -->
-        <div id="pokemonInfo"></div>
-    </div>
+    </main>
     <script>
         // Adiciona um evento de clique ao botão de busca
         document.getElementById('searchBtn').addEventListener('click', function() {
@@ -42,7 +43,7 @@
 
                     // Cria o HTML para exibir as informações do Pokémon
                     const pokemonInfo = `
-                        <h2>${data.name}</h2>
+                        <h2>${data.name} - ${data.id}</h2>
                         <img id="pokemonImage" src="${data.sprites.front_default}" alt="${data.name}">
                         <p>Altura: ${data.height}</p>
                         <p>Peso: ${data.weight}</p>
