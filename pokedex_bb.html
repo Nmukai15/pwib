@@ -5,98 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./imagens/icone.png">
     <link rel="stylesheet" href="pokedex.css"/>
+    <script defer src="./js/script.js"></script>
     <title>Pokédex</title>
 </head>
 <body>
-    <main class="container">
-        <h1>Pokédex</h1>
-        <!-- Campo de entrada para buscar Pokémon -->
-        <input type="text" id="search" placeholder="Digite o nome ou ID do Pokémon">
-        <!-- Botão para buscar o Pokémon -->
-        <button id="searchBtn">Buscar</button>
-        <!-- Div onde as informações do Pokémon serão exibidas -->
-        <div id="pokemonInfo"></div>
-        <div class="buttons">
-            <button class="ant">&larr; Anterior </button>
-            <button class="dps">Próximo &rarr;</button>
-        </div>
-    </main>
-    <script>
-        // Adiciona um evento de clique ao botão de busca
-        document.getElementById('searchBtn').addEventListener('click', function() {
-            // Obtém o valor digitado no campo de busca e transforma em minúsculas
-            const searchValue = document.getElementById('search').value.toLowerCase();
-            // Faz uma requisição à API do Pokémon
-            fetch(`https://pokeapi.co/api/v2/pokemon/${searchValue}`)
-                .then(response => {
-                    // Verifica se a resposta da API é válida
-                    if (!response.ok) {
-                        throw new Error('Pokémon não encontrado');
-                    }
-                    return response.json(); // Converte a resposta em JSON
-                })
-                .then(data => {
-                    // Mapeia os tipos do Pokémon e cria elementos HTML para cada tipo
-                    const types = data.types.map(typeInfo => {
-                        return `<span class="type" style="background-color: ${getTypeColor(typeInfo.type.name)};">${typeInfo.type.name}</span>`;
-                    }).join('');
 
-                    // Cria o HTML para exibir as informações do Pokémon
-                    const pokemonInfo = `
-                        <h2>${data.name} - ${data.id}</h2>
-                        <img id="pokemonImage" src="${data.sprites.front_default}" alt="${data.name}">
-                        <p>Altura: ${data.height}</p>
-                        <p>Peso: ${data.weight}</p>
-                        <p>Tipos: ${types}</p>
-                        <button id="toggleImage">Mostrar Shiny</button>
-                    `;
-                    // Insere as informações do Pokémon na div correspondente
-                    document.getElementById('pokemonInfo').innerHTML = pokemonInfo;
+  <main id="principal">
+        <img src="#" alt="pokemon" class="pokemon__image">
 
-                    // Adiciona um evento de clique ao botão de alternar imagem
-                    document.getElementById('toggleImage').addEventListener('click', function() {
-                        const img = document.getElementById('pokemonImage');
-                        // Alterna entre a imagem normal e a imagem shiny
-                        if (img.src.includes('shiny')) {
-                            img.src = data.sprites.front_default; // Imagem normal
-                            this.textContent = 'Mostrar Shiny'; // Atualiza o texto do botão
-                        } else {
-                            img.src = data.sprites.front_shiny; // Imagem shiny
-                            this.textContent = 'Mostrar Normal'; // Atualiza o texto do botão
-                        }
-                    });
-                })
-                .catch(error => {
-                    // Exibe uma mensagem de erro se o Pokémon não for encontrado
-                    document.getElementById('pokemonInfo').innerHTML = `<p>${error.message}</p>`;
-                });
-        });
+    <h1 class="pokemon__data">
+      <span class="pokemon__number"></span> -
+      <span class="pokemon__name"></span> - <br>
+      <span class="pokemon__tiponome"></span><br>
+    </h1>
 
-        // Função para obter a cor correspondente a cada tipo de Pokémon
-        function getTypeColor(type) {
-            const typeColors = {
-                fire: '#F08030',
-                water: '#6890F0',
-                grass: '#78C850',
-                electric: '#F8D030',
-                ice: '#98D8D8',
-                fighting: '#C03028',
-                poison: '#A040A0',
-                ground: '#E0C068',
-                flying: '#A890F0',
-                psychic: '#F85888',
-                bug: '#A8B820',
-                rock: '#B8A038',
-                ghost: '#705898',
-                dragon: '#7038F8',
-                dark: '#705848',
-                steel: '#B8B8D0',
-                fairy: '#F0B6BC',
-                normal: '#A8A878',
-                // Adicione mais tipos conforme necessário
-            };
-            return typeColors[type] || '#A8A8A8'; // Cor padrão se o tipo não for encontrado
-        }
-    </script>
+    <form class="form">
+      <input
+        type="search"
+        class="input__search"
+        placeholder="&#10022;Encontre um pokémon &#128270;"
+        required
+      />
+    </form>
+
+    <div class="buttons">
+      <button class="button btn-prev">&lt; Anterior</button>
+      <button class="shiny"></button>
+      <button class="button btn-next">Próximo &gt;</button>
+    </div>
+    <img src="./imagens/rotomdex.jpg" alt="pokedex" class="pokedex">
+  </main>
+
 </body>
 </html>
